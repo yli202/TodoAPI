@@ -6,5 +6,7 @@
         public string Name { get; set; }
 
         public bool IsComplete { get; set; }
+
+        public string Quiz2 { get; set; }
     }
 }
