@@ -27,7 +27,7 @@ namespace TodoAPI.Controllers
                 _context.TodoItems.Add(new TodoItem { Name = "Group Project" });
 
                 _context.SaveChanges();
-
+                // This is a comment for the quiz
             }
         }
 
