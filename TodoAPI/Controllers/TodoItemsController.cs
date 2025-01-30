@@ -22,7 +22,7 @@ namespace TodoAPI.Controllers
             {
                 _context.TodoItems.Add(new TodoItem { Name="Lab1", IsComplete=true});
                 _context.TodoItems.Add(new TodoItem { Name="Lab2",IsComplete=false});
-                // Professor, I added my fix here
+                // Professor, I added my fix here..
                 _context.TodoItems.Add(new TodoItem { Name = "Quiz2", IsComplete = true });
             }
 
