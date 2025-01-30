@@ -4,6 +4,7 @@ using TodoAPI.Models;
 
 namespace TodoAPI
 {
+    // 6. Update C# code to fix the issue created in 4) [1 mark]
     public class Program
     {
         public static void Main(string[] args)
