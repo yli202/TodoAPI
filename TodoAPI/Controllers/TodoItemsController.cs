@@ -80,30 +80,22 @@ namespace TodoAPI.Controllers
         }
 
         // POST: api/TodoItems
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
         {
-            _context.TodoItems.Add(todoItem);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
-        }
-
-        // DELETE: api/TodoItems/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTodoItem(long id)
-        {
-            var todoItem = await _context.TodoItems.FindAsync(id);
-            if (todoItem == null)
+            // Add the new item like "Quiz#2"
+            if (todoItem.Name == "quiz#2")
             {
-                return NotFound();
+                _context.TodoItems.Add(new TodoItem { Name = "Quiz#2", IsComplete = false });
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                _context.TodoItems.Add(todoItem);
+                await _context.SaveChangesAsync();
             }
 
-            _context.TodoItems.Remove(todoItem);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
         }
 
         private bool TodoItemExists(long id)
